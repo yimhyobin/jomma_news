@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 뉴스 컬렉션: 읽기만 허용 (쓰기는 서버에서만)
+    match /news/{newsId} {
+      allow read: if true;
+      allow write: if false;
+    }
+  }
+}

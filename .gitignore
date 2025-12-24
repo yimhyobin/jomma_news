@@ -1,0 +1,29 @@
+# 의존성
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 환경 변수 및 비밀키
+.env
+.env.local
+serviceAccountKey.json
+*.pem
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 로그
+*.log
+logs/
+
+# Firebase 캐시
+.firebase/

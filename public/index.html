@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘의 뉴스</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 헤더 -->
+        <header class="header">
+            <h1 class="logo">오늘의 뉴스</h1>
+            <p class="date" id="today-date"></p>
+            <p class="subtitle">매일 아침 7시, 꼭 알아야 할 뉴스 4개</p>
+        </header>
+
+        <!-- 카테고리 탭 -->
+        <nav class="category-tabs">
+            <button class="tab active" data-category="all">전체</button>
+            <button class="tab" data-category="realestate">부동산</button>
+            <button class="tab" data-category="stock">주식</button>
+            <button class="tab" data-category="economy">경제</button>
+            <button class="tab" data-category="it">IT</button>
+        </nav>
+
+        <!-- 뉴스 카드 컨테이너 -->
+        <main class="news-container" id="news-container">
+            <!-- 로딩 상태 -->
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>뉴스를 불러오는 중...</p>
+            </div>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="footer">
+            <p>뉴스 출처: 네이버 뉴스</p>
+            <p>매일 오전 7시 자동 업데이트</p>
+        </footer>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
