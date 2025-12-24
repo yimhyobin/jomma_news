@@ -1,11 +1,11 @@
-// Firebase 설정 - 프로젝트 생성 후 실제 값으로 교체 필요
+// Firebase 설정
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDOlixNBVir6cjP2nfVhb9O7lDyGhuvzZs",
+    authDomain: "jomma-news.firebaseapp.com",
+    projectId: "jomma-news",
+    storageBucket: "jomma-news.firebasestorage.app",
+    messagingSenderId: "876714694134",
+    appId: "1:876714694134:web:051f13d5540ac1901aa3d7"
 };
 
 // Firebase 초기화
