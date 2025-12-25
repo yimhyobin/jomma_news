@@ -97,33 +97,27 @@ async function fetchNews() {
     setLoading(true);
 
     try {
-        // 오늘 날짜 기준으로 뉴스 조회
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
+        // 각 카테고리별로 최신 뉴스 1개씩 가져오기
+        const categories = ['economy', 'realestate', 'stock', 'it'];
+        newsData = [];
 
-        const snapshot = await db.collection('news')
-            .where('date', '>=', today)
-            .orderBy('date', 'desc')
-            .get();
-
-        if (snapshot.empty) {
-            // 오늘 뉴스가 없으면 가장 최근 뉴스 조회
-            const recentSnapshot = await db.collection('news')
+        for (const category of categories) {
+            const snapshot = await db.collection('news')
+                .where('category', '==', category)
                 .orderBy('date', 'desc')
-                .limit(4)
+                .limit(1)
                 .get();
 
-            newsData = recentSnapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-        } else {
-            newsData = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...doc.data()
-            }));
+            if (!snapshot.empty) {
+                const doc = snapshot.docs[0];
+                newsData.push({
+                    id: doc.id,
+                    ...doc.data()
+                });
+            }
         }
 
+        console.log('로드된 뉴스:', newsData.length, '개');
         renderNews(currentCategory);
     } catch (error) {
         console.error('뉴스 로딩 실패:', error);

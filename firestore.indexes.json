@@ -4,6 +4,7 @@
       "collectionGroup": "news",
       "queryScope": "COLLECTION",
       "fields": [
+        { "fieldPath": "category", "order": "ASCENDING" },
         { "fieldPath": "date", "order": "DESCENDING" }
       ]
     }
